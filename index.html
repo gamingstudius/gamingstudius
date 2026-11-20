@@ -5,41 +5,205 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gamingstudius - Portal Gamer</title>
+
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#080812;color:#fff;font-family:Arial,sans-serif}
-header{padding:22px 7%;background:#101020;border-bottom:1px solid #00eaff;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
-.logo{font-size:24px;font-weight:bold;color:#00efff;text-shadow:0 0 12px #00efff}
+
+body{
+background:#080808;
+color:#fff;
+font-family:Arial,sans-serif;
+}
+
+header{
+padding:22px 7%;
+background:#101010;
+border-bottom:2px solid #e00020;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+color:#ff1838;
+text-shadow:0 0 12px #ff1838;
+}
+
 nav{display:flex;gap:16px;flex-wrap:wrap}
-nav a{color:white;text-decoration:none}
-nav a:hover{color:#00efff}
-.hero{padding:85px 8%;background:radial-gradient(circle at 80% 30%,#20245b,#080812 70%)}
+nav a{color:white;text-decoration:none;transition:.2s}
+nav a:hover{color:#ff1838}
+
+.hero{
+padding:85px 8%;
+background:radial-gradient(circle at 80% 30%,#47101b,#080808 70%);
+}
+
 .hero h1{font-size:clamp(35px,7vw,60px);margin-bottom:20px}
-.neon{color:#00efff}
+.neon{color:#ff1838}
 .hero p{color:#bbb;line-height:1.7;max-width:600px}
+
 section{padding:45px 8%}
-h2{color:#00efff;margin-bottom:22px}
-.search{width:100%;padding:15px;background:#171729;border:1px solid #343451;border-radius:9px;color:white;margin-bottom:25px;font-size:16px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.card{background:#151526;border:1px solid #30304a;border-radius:13px;padding:22px;transition:.25s}
-.card:hover{transform:translateY(-5px);border-color:#00efff;box-shadow:0 0 15px #00efff35}
+h2{color:#ff1838;margin-bottom:22px}
+
+.highlights{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:22px;
+}
+
+.highlight{
+min-height:300px;
+padding:28px;
+border-radius:16px;
+display:flex;
+flex-direction:column;
+justify-content:flex-end;
+position:relative;
+overflow:hidden;
+transition:.3s;
+}
+
+.highlight:hover{transform:translateY(-5px)}
+
+.highlight h3{
+font-size:30px;
+margin-bottom:12px;
+position:relative;
+z-index:1;
+}
+
+.highlight p{
+line-height:1.6;
+color:#eee;
+margin-bottom:18px;
+position:relative;
+z-index:1;
+}
+
+.highlight button{
+position:relative;
+z-index:1;
+align-self:flex-start;
+}
+
+.resident{
+background:
+linear-gradient(0deg,#090000 5%,#700014 65%,#160609);
+border:1px solid #e00020;
+box-shadow:0 0 18px #e0002025;
+}
+
+.resident h3{color:#ff263f}
+
+.gta{
+background:
+linear-gradient(135deg,#4b174f,#d64d83,#f39b65,#322b78);
+border:1px solid #f58bc5;
+box-shadow:0 0 20px #d64d8340;
+}
+
+.gta h3{color:white;text-shadow:0 2px 10px #40103d}
+
+.search{
+width:100%;
+padding:15px;
+background:#171717;
+border:1px solid #393939;
+border-radius:9px;
+color:white;
+margin-bottom:25px;
+font-size:16px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+background:#151515;
+border:1px solid #303030;
+border-radius:13px;
+padding:22px;
+transition:.25s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+border-color:#ff1838;
+box-shadow:0 0 15px #ff183835;
+}
+
 .emoji{font-size:42px;margin-bottom:14px}
 .card h3{margin-bottom:12px}
 .card p{color:#bbb;line-height:1.6;font-size:14px}
-.tag{display:block;color:#00efff;font-size:12px;margin:15px 0}
-button{border:0;border-radius:8px;padding:12px 17px;background:#00efff;color:#080812;font-weight:bold;cursor:pointer}
-button:hover{background:white}
+
+.tag{
+display:block;
+color:#ff536b;
+font-size:12px;
+margin:15px 0;
+}
+
+button{
+border:0;
+border-radius:8px;
+padding:12px 17px;
+background:#e00020;
+color:white;
+font-weight:bold;
+cursor:pointer;
+transition:.2s;
+}
+
+button:hover{background:#ff3855}
+
+.gta button{
+background:#fff;
+color:#542052;
+}
+
+.gta button:hover{background:#fce0f1}
+
 .detail{padding:40px 8%;min-height:75vh}
 .detail h1{font-size:clamp(32px,6vw,48px);margin:18px 0}
 .detail h2{margin-top:20px}
 .detail p,.detail li{color:#ccc;line-height:1.8;margin-bottom:10px}
 .detail ul{padding-left:23px}
-.panel{background:#151526;border:1px solid #30304a;border-radius:12px;padding:22px;margin:20px 0}
-.back{background:#292943;color:white;margin-bottom:20px}
+
+.panel{
+background:#151515;
+border:1px solid #303030;
+border-radius:12px;
+padding:22px;
+margin:20px 0;
+}
+
+.back{background:#292929;color:white;margin-bottom:20px}
 .hidden{display:none}
-footer{text-align:center;padding:30px;color:#888;border-top:1px solid #292943}
+
+footer{
+text-align:center;
+padding:30px;
+color:#888;
+border-top:1px solid #292929;
+}
+
+@media(max-width:600px){
+header{padding:20px 5%}
+nav{gap:12px}
+.hero{padding:65px 6%}
+section{padding:35px 6%}
+.highlight{min-height:270px}
+}
 </style>
 </head>
+
 <body>
 
 <header>
@@ -52,10 +216,31 @@ footer{text-align:center;padding:30px;color:#888;border-top:1px solid #292943}
 </header>
 
 <main id="home">
+
 <div class="hero">
 <h1>SEU UNIVERSO<br><span class="neon">GAMER COMEÇA AQUI.</span></h1>
 <p>Explore jogos, conheça personagens, descubra histórias e encontre curiosidades que você talvez nunca tenha conhecido!</p>
 </div>
+
+<section id="destaques">
+<h2>🔥 GRANDES DESTAQUES</h2>
+
+<div class="highlights">
+
+<div class="highlight resident">
+<h3>RESIDENT EVIL</h3>
+<p>Entre no universo de uma das maiores franquias de terror dos videogames. Conheça os jogos, personagens, histórias e segredos.</p>
+<button onclick="openGame(6)">EXPLORAR FRANQUIA →</button>
+</div>
+
+<div class="highlight gta">
+<h3>GRAND THEFT AUTO VI</h3>
+<p>Bem-vindo a Leonida. Conheça o universo de GTA VI, seus personagens, Vice City e muito mais.</p>
+<button onclick="openGame(7)">ACESSAR DESTAQUE →</button>
+</div>
+
+</div>
+</section>
 
 <section id="jogos">
 <h2>🎮 EXPLORE OS JOGOS</h2>
@@ -72,6 +257,7 @@ footer{text-align:center;padding:30px;color:#888;border-top:1px solid #292943}
 <div class="card"><div class="emoji">🔥</div><h3>Free Fire</h3><p>O jogo foi lançado em 2017 e se tornou um dos battle royales mais conhecidos dos celulares.</p></div>
 </div>
 </section>
+
 </main>
 
 <section id="details" class="detail hidden"></section>
@@ -130,6 +316,22 @@ story:"Free Fire é um jogo de batalha real no qual jogadores disputam partidas 
 characters:["Alok","Kelly","Hayato","Chrono","Moco"],
 gameplay:["Battle Royale","Contra Squad","Personagens com habilidades","Armas e equipamentos"],
 facts:["Free Fire foi lançado em 2017.","O jogo é desenvolvido e publicado pela Garena.","As partidas de Battle Royale possuem uma área segura que diminui.","Existem diferentes personagens com habilidades especiais."]
+},
+{
+name:"Resident Evil",emoji:"🧟",genre:"Terror e sobrevivência",
+desc:"Explore uma das franquias mais marcantes do terror nos videogames.",
+story:"A franquia acompanha diferentes personagens enfrentando ameaças biológicas, conspirações e criaturas perigosas.",
+characters:["Leon S. Kennedy","Claire Redfield","Chris Redfield","Jill Valentine","Ada Wong"],
+gameplay:["Exploração","Quebra-cabeças","Sobrevivência","Combate contra criaturas"],
+facts:["A franquia começou em 1996.","A série possui jogos principais e spin-offs.","Raccoon City é um dos cenários mais conhecidos.","A franquia também ganhou filmes e animações."]
+},
+{
+name:"Grand Theft Auto VI",emoji:"🌴",genre:"Ação e mundo aberto",
+desc:"Uma nova aventura no universo de Grand Theft Auto, ambientada no estado fictício de Leonida.",
+story:"GTA VI apresenta Jason e Lucia em uma história ambientada em Leonida, incluindo a cidade de Vice City.",
+characters:["Jason","Lucia"],
+gameplay:["Mundo aberto","Exploração de Vice City e Leonida","Aventura e ação"],
+facts:["Vice City retorna em uma nova versão.","O jogo apresenta o estado fictício de Leonida.","Jason e Lucia são os protagonistas anunciados."]
 }
 ];
 
@@ -190,6 +392,7 @@ document.getElementById("details").classList.add("hidden");
 document.getElementById("home").classList.remove("hidden");
 window.scrollTo(0,0);
 }
+
 renderCards();
 </script>
 </body>
