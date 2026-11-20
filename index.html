@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gamingstudius</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #080811;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  padding: 25px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #24243b;
+}
+
+.logo {
+  color: #00f7ff;
+  font-size: 26px;
+  font-weight: bold;
+  text-shadow: 0 0 15px #00f7ff;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+nav a:hover {
+  color: #00f7ff;
+}
+
+.hero {
+  padding: 90px 8%;
+  background: radial-gradient(circle at 80% 30%, #14234a, #080811 65%);
+}
+
+.hero h1 {
+  font-size: clamp(38px, 6vw, 65px);
+  margin-bottom: 20px;
+}
+
+.hero span {
+  color: #00f7ff;
+}
+
+.hero p {
+  color: #aaa;
+  font-size: 18px;
+  max-width: 550px;
+  line-height: 1.6;
+}
+
+section {
+  padding: 55px 8%;
+}
+
+h2 {
+  margin-bottom: 25px;
+  color: #00f7ff;
+}
+
+.search {
+  width: 100%;
+  padding: 15px;
+  background: #151525;
+  border: 1px solid #30304b;
+  border-radius: 10px;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: #141422;
+  border: 1px solid #28283d;
+  border-radius: 13px;
+  padding: 23px;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #00f7ff;
+  box-shadow: 0 0 15px #00f7ff33;
+}
+
+.card .emoji {
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: #aaa;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.tag {
+  display: inline-block;
+  color: #00f7ff;
+  margin-top: 15px;
+  font-size: 12px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  border-top: 1px solid #24243b;
+  color: #777;
+}
+
+@media(max-width:600px) {
+  header {
+    flex-direction: column;
+    gap: 18px;
+  }
+  nav a {
+    margin: 0 7px;
+    font-size: 13px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">GAMINGSTUDIUS</div>
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#jogos">Jogos</a>
+    <a href="#curiosidades">Curiosidades</a>
+  </nav>
+</header>
+
+<div class="hero" id="inicio">
+  <h1>O universo gamer<br>
+  <span>começa aqui.</span></h1>
+  <p>
+    Notícias, curiosidades, histórias e tudo
+    sobre os jogos que fazem parte da nossa vida.
+    Entre no mundo Gamingstudius!
+  </p>
+</div>
+
+<section id="jogos">
+  <h2>🎮 Universo dos jogos</h2>
+
+  <input
+    class="search"
+    id="search"
+    placeholder="Pesquisar um jogo..."
+    oninput="filtrar()"
+  >
+
+  <div class="cards" id="gameCards">
+
+    <article class="card">
+      <div class="emoji">🤠</div>
+      <h3>Red Dead Redemption 2</h3>
+      <p>Explore o Velho Oeste em uma aventura cheia de histórias e detalhes.</p>
+      <span class="tag">AÇÃO / AVENTURA</span>
+    </article>
+
+    <article class="card">
+      <div class="emoji">🚗</div>
+      <h3>GTA V</h3>
+      <p>Conheça Los Santos, seus personagens e os segredos espalhados pelo mapa.</p>
+      <span class="tag">MUNDO ABERTO</span>
+    </article>
+
+    <article class="card">
+      <div class="emoji">⚔️</div>
+      <h3>God of War</h3>
+      <p>Acompanhe Kratos e Atreus em uma jornada pela mitologia nórdica.</p>
+      <span class="tag">AÇÃO / RPG</span>
+    </article>
+
+    <article class="card">
+      <div class="emoji">🧟</div>
+      <h3>The Last of Us</h3>
+      <p>Uma história emocionante em um mundo devastado por uma infecção.</p>
+      <span class="tag">SOBREVIVÊNCIA</span>
+    </article>
+
+  </div>
+</section>
+
+<section id="curiosidades">
+  <h2>🧠 Curiosidades gamer</h2>
+
+  <div class="cards">
+    <article class="card">
+      <div class="emoji">🐎</div>
+      <h3>Red Dead Redemption 2</h3>
+      <p>Os NPCs possuem rotinas próprias, deixando o mundo mais vivo e dinâmico.</p>
+    </article>
+
+    <article class="card">
+      <div class="emoji">🌍</div>
+      <h3>Minecraft</h3>
+      <p>O mundo do jogo é gerado proceduralmente, permitindo inúmeras combinações de terrenos.</p>
+    </article>
+
+    <article class="card">
+      <div class="emoji">🪓</div>
+      <h3>God of War</h3>
+      <p>O jogo de 2018 foi inspirado em elementos da mitologia nórdica.</p>
+    </article>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Gamingstudius</p>
+  <p>Feito para quem ama videogames 🎮</p>
+</footer>
+
+<script>
+function filtrar() {
+  const termo = document.getElementById("search")
+    .value.toLowerCase();
+
+  document.querySelectorAll("#gameCards .card")
+    .forEach(card => {
+      card.style.display =
+        card.innerText.toLowerCase().includes(termo)
+          ? "block" : "none";
+    });
+}
+</script>
+
+</body>
+</html>
