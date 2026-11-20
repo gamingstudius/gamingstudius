@@ -3,255 +3,194 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gamingstudius</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gamingstudius - Portal Gamer</title>
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: #080811;
-  color: white;
-  font-family: Arial, sans-serif;
-}
-
-header {
-  padding: 25px 8%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #24243b;
-}
-
-.logo {
-  color: #00f7ff;
-  font-size: 26px;
-  font-weight: bold;
-  text-shadow: 0 0 15px #00f7ff;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-}
-
-nav a:hover {
-  color: #00f7ff;
-}
-
-.hero {
-  padding: 90px 8%;
-  background: radial-gradient(circle at 80% 30%, #14234a, #080811 65%);
-}
-
-.hero h1 {
-  font-size: clamp(38px, 6vw, 65px);
-  margin-bottom: 20px;
-}
-
-.hero span {
-  color: #00f7ff;
-}
-
-.hero p {
-  color: #aaa;
-  font-size: 18px;
-  max-width: 550px;
-  line-height: 1.6;
-}
-
-section {
-  padding: 55px 8%;
-}
-
-h2 {
-  margin-bottom: 25px;
-  color: #00f7ff;
-}
-
-.search {
-  width: 100%;
-  padding: 15px;
-  background: #151525;
-  border: 1px solid #30304b;
-  border-radius: 10px;
-  color: white;
-  margin-bottom: 30px;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 22px;
-}
-
-.card {
-  background: #141422;
-  border: 1px solid #28283d;
-  border-radius: 13px;
-  padding: 23px;
-  transition: .3s;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  border-color: #00f7ff;
-  box-shadow: 0 0 15px #00f7ff33;
-}
-
-.card .emoji {
-  font-size: 35px;
-  margin-bottom: 15px;
-}
-
-.card h3 {
-  margin-bottom: 12px;
-}
-
-.card p {
-  color: #aaa;
-  line-height: 1.5;
-  font-size: 14px;
-}
-
-.tag {
-  display: inline-block;
-  color: #00f7ff;
-  margin-top: 15px;
-  font-size: 12px;
-}
-
-footer {
-  text-align: center;
-  padding: 30px;
-  border-top: 1px solid #24243b;
-  color: #777;
-}
-
-@media(max-width:600px) {
-  header {
-    flex-direction: column;
-    gap: 18px;
-  }
-  nav a {
-    margin: 0 7px;
-    font-size: 13px;
-  }
-}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#080812;color:#fff;font-family:Arial,sans-serif}
+header{padding:22px 7%;background:#101020;border-bottom:1px solid #00eaff;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
+.logo{font-size:24px;font-weight:bold;color:#00efff;text-shadow:0 0 12px #00efff}
+nav{display:flex;gap:16px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none}
+nav a:hover{color:#00efff}
+.hero{padding:85px 8%;background:radial-gradient(circle at 80% 30%,#20245b,#080812 70%)}
+.hero h1{font-size:clamp(35px,7vw,60px);margin-bottom:20px}
+.neon{color:#00efff}
+.hero p{color:#bbb;line-height:1.7;max-width:600px}
+section{padding:45px 8%}
+h2{color:#00efff;margin-bottom:22px}
+.search{width:100%;padding:15px;background:#171729;border:1px solid #343451;border-radius:9px;color:white;margin-bottom:25px;font-size:16px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:#151526;border:1px solid #30304a;border-radius:13px;padding:22px;transition:.25s}
+.card:hover{transform:translateY(-5px);border-color:#00efff;box-shadow:0 0 15px #00efff35}
+.emoji{font-size:42px;margin-bottom:14px}
+.card h3{margin-bottom:12px}
+.card p{color:#bbb;line-height:1.6;font-size:14px}
+.tag{display:block;color:#00efff;font-size:12px;margin:15px 0}
+button{border:0;border-radius:8px;padding:12px 17px;background:#00efff;color:#080812;font-weight:bold;cursor:pointer}
+button:hover{background:white}
+.detail{padding:40px 8%;min-height:75vh}
+.detail h1{font-size:clamp(32px,6vw,48px);margin:18px 0}
+.detail h2{margin-top:20px}
+.detail p,.detail li{color:#ccc;line-height:1.8;margin-bottom:10px}
+.detail ul{padding-left:23px}
+.panel{background:#151526;border:1px solid #30304a;border-radius:12px;padding:22px;margin:20px 0}
+.back{background:#292943;color:white;margin-bottom:20px}
+.hidden{display:none}
+footer{text-align:center;padding:30px;color:#888;border-top:1px solid #292943}
 </style>
 </head>
-
 <body>
 
 <header>
-  <div class="logo">GAMINGSTUDIUS</div>
-  <nav>
-    <a href="#inicio">Início</a>
-    <a href="#jogos">Jogos</a>
-    <a href="#curiosidades">Curiosidades</a>
-  </nav>
+<div class="logo">GAMINGSTUDIUS</div>
+<nav>
+<a href="#" onclick="home();return false">Início</a>
+<a href="#jogos" onclick="home();return false">Jogos</a>
+<a href="#curiosidades" onclick="home();return false">Curiosidades</a>
+</nav>
 </header>
 
-<div class="hero" id="inicio">
-  <h1>O universo gamer<br>
-  <span>começa aqui.</span></h1>
-  <p>
-    Notícias, curiosidades, histórias e tudo
-    sobre os jogos que fazem parte da nossa vida.
-    Entre no mundo Gamingstudius!
-  </p>
+<main id="home">
+<div class="hero">
+<h1>SEU UNIVERSO<br><span class="neon">GAMER COMEÇA AQUI.</span></h1>
+<p>Explore jogos, conheça personagens, descubra histórias e encontre curiosidades que você talvez nunca tenha conhecido!</p>
 </div>
 
 <section id="jogos">
-  <h2>🎮 Universo dos jogos</h2>
-
-  <input
-    class="search"
-    id="search"
-    placeholder="Pesquisar um jogo..."
-    oninput="filtrar()"
-  >
-
-  <div class="cards" id="gameCards">
-
-    <article class="card">
-      <div class="emoji">🤠</div>
-      <h3>Red Dead Redemption 2</h3>
-      <p>Explore o Velho Oeste em uma aventura cheia de histórias e detalhes.</p>
-      <span class="tag">AÇÃO / AVENTURA</span>
-    </article>
-
-    <article class="card">
-      <div class="emoji">🚗</div>
-      <h3>GTA V</h3>
-      <p>Conheça Los Santos, seus personagens e os segredos espalhados pelo mapa.</p>
-      <span class="tag">MUNDO ABERTO</span>
-    </article>
-
-    <article class="card">
-      <div class="emoji">⚔️</div>
-      <h3>God of War</h3>
-      <p>Acompanhe Kratos e Atreus em uma jornada pela mitologia nórdica.</p>
-      <span class="tag">AÇÃO / RPG</span>
-    </article>
-
-    <article class="card">
-      <div class="emoji">🧟</div>
-      <h3>The Last of Us</h3>
-      <p>Uma história emocionante em um mundo devastado por uma infecção.</p>
-      <span class="tag">SOBREVIVÊNCIA</span>
-    </article>
-
-  </div>
+<h2>🎮 EXPLORE OS JOGOS</h2>
+<input class="search" id="search" placeholder="Pesquisar jogo..." oninput="filterGames()">
+<div class="cards" id="cards"></div>
 </section>
 
 <section id="curiosidades">
-  <h2>🧠 Curiosidades gamer</h2>
-
-  <div class="cards">
-    <article class="card">
-      <div class="emoji">🐎</div>
-      <h3>Red Dead Redemption 2</h3>
-      <p>Os NPCs possuem rotinas próprias, deixando o mundo mais vivo e dinâmico.</p>
-    </article>
-
-    <article class="card">
-      <div class="emoji">🌍</div>
-      <h3>Minecraft</h3>
-      <p>O mundo do jogo é gerado proceduralmente, permitindo inúmeras combinações de terrenos.</p>
-    </article>
-
-    <article class="card">
-      <div class="emoji">🪓</div>
-      <h3>God of War</h3>
-      <p>O jogo de 2018 foi inspirado em elementos da mitologia nórdica.</p>
-    </article>
-  </div>
+<h2>🧠 CURIOSIDADES GAMER</h2>
+<div class="cards">
+<div class="card"><div class="emoji">🐎</div><h3>Red Dead Redemption 2</h3><p>O jogo possui um mundo cheio de animais, acontecimentos e personagens com rotinas próprias.</p></div>
+<div class="card"><div class="emoji">⛏️</div><h3>Minecraft</h3><p>Seus mundos são gerados proceduralmente, criando paisagens diferentes a cada partida.</p></div>
+<div class="card"><div class="emoji">⚔️</div><h3>God of War</h3><p>A franquia começou com histórias inspiradas na mitologia grega e depois explorou a nórdica.</p></div>
+<div class="card"><div class="emoji">🔥</div><h3>Free Fire</h3><p>O jogo foi lançado em 2017 e se tornou um dos battle royales mais conhecidos dos celulares.</p></div>
+</div>
 </section>
+</main>
+
+<section id="details" class="detail hidden"></section>
 
 <footer>
-  <p>© 2026 Gamingstudius</p>
-  <p>Feito para quem ama videogames 🎮</p>
+<p>© 2026 Gamingstudius</p>
+<p>Feito para quem ama videogames 🎮</p>
 </footer>
 
 <script>
-function filtrar() {
-  const termo = document.getElementById("search")
-    .value.toLowerCase();
-
-  document.querySelectorAll("#gameCards .card")
-    .forEach(card => {
-      card.style.display =
-        card.innerText.toLowerCase().includes(termo)
-          ? "block" : "none";
-    });
+const games=[
+{
+name:"GTA V",emoji:"🚗",genre:"Mundo aberto",
+desc:"Explore Los Santos em uma aventura cheia de crimes, escolhas e ação.",
+story:"A história acompanha Michael, Franklin e Trevor, três protagonistas que se envolvem em assaltos e conflitos na cidade de Los Santos.",
+characters:["Michael De Santa","Franklin Clinton","Trevor Philips"],
+gameplay:["Exploração de mundo aberto","Missões e assaltos","Carros, motos e aviões","GTA Online"],
+facts:["Os jogadores podem alternar entre três protagonistas.","Los Santos foi inspirada em Los Angeles.","O jogo tem diversas atividades além da história principal.","Existem segredos e mistérios espalhados pelo mapa."]
+},
+{
+name:"Red Dead Redemption 2",emoji:"🤠",genre:"Ação e aventura",
+desc:"Viva uma jornada pelo Velho Oeste com Arthur Morgan.",
+story:"Arthur Morgan faz parte da gangue Van der Linde, que tenta sobreviver enquanto o Velho Oeste passa por grandes transformações.",
+characters:["Arthur Morgan","Dutch van der Linde","John Marston","Sadie Adler"],
+gameplay:["Caça e pesca","Exploração","Missões da história","Interação com personagens"],
+facts:["Arthur pode desenvolver sua honra através das escolhas.","O jogo possui diversos animais e ecossistemas.","O acampamento da gangue muda durante a campanha.","Há muitos acontecimentos secretos pelo mapa."]
+},
+{
+name:"God of War",emoji:"⚔️",genre:"Ação e aventura",
+desc:"Acompanhe Kratos e Atreus em uma jornada pela mitologia nórdica.",
+story:"Kratos e seu filho Atreus partem para cumprir o último desejo de Faye, enfrentando desafios e criaturas da mitologia nórdica.",
+characters:["Kratos","Atreus","Mimir","Freya","Baldur"],
+gameplay:["Combates com o Machado Leviatã","Exploração","Quebra-cabeças","Enfrentamento de criaturas mitológicas"],
+facts:["O jogo de 2018 marcou uma nova fase da franquia.","O Machado Leviatã pode retornar à mão de Kratos.","Mimir é conhecido por suas histórias.","A franquia também possui jogos inspirados na mitologia grega."]
+},
+{
+name:"The Last of Us",emoji:"🧟",genre:"Sobrevivência",
+desc:"Uma aventura emocionante em um mundo devastado por uma infecção.",
+story:"Joel recebe a missão de acompanhar Ellie em uma jornada por um mundo transformado por uma infecção causada pelo fungo Cordyceps.",
+characters:["Joel","Ellie","Tess","Marlene","Tommy"],
+gameplay:["Exploração","Combate e furtividade","Coleta de recursos","Criação de equipamentos"],
+facts:["O primeiro jogo foi lançado em 2013.","A história ganhou uma adaptação para televisão.","A relação entre Joel e Ellie é o centro da narrativa.","O universo apresenta diferentes tipos de infectados."]
+},
+{
+name:"Minecraft",emoji:"⛏️",genre:"Sandbox",
+desc:"Construa, explore e sobreviva em um mundo feito de blocos.",
+story:"Minecraft permite que o jogador crie sua própria aventura, explore mundos e construa praticamente tudo que imaginar.",
+characters:["Steve","Alex","Villagers","Ender Dragon"],
+gameplay:["Construção","Sobrevivência","Exploração de cavernas","Criação de ferramentas"],
+facts:["O jogo foi criado por Markus Persson, conhecido como Notch.","Existem dimensões como Nether e End.","O Creeper surgiu de um erro durante a criação de um modelo de porco.","É possível enfrentar o Ender Dragon."]
+},
+{
+name:"Free Fire",emoji:"🔥",genre:"Battle Royale",
+desc:"Entre na batalha e lute para ser o último sobrevivente.",
+story:"Free Fire é um jogo de batalha real no qual jogadores disputam partidas em mapas, buscando sobreviver até o final.",
+characters:["Alok","Kelly","Hayato","Chrono","Moco"],
+gameplay:["Battle Royale","Contra Squad","Personagens com habilidades","Armas e equipamentos"],
+facts:["Free Fire foi lançado em 2017.","O jogo é desenvolvido e publicado pela Garena.","As partidas de Battle Royale possuem uma área segura que diminui.","Existem diferentes personagens com habilidades especiais."]
 }
-</script>
+];
 
+function renderCards(list=games){
+const box=document.getElementById("cards");
+box.innerHTML="";
+list.forEach(g=>{
+const i=games.indexOf(g);
+box.innerHTML+=`
+<div class="card">
+<div class="emoji">${g.emoji}</div>
+<h3>${g.name}</h3>
+<p>${g.desc}</p>
+<span class="tag">${g.genre}</span>
+<button onclick="openGame(${i})">VER MAIS →</button>
+</div>`;
+});
+if(!list.length)box.innerHTML="<p>Nenhum jogo encontrado.</p>";
+}
+
+function filterGames(){
+const q=document.getElementById("search").value.toLowerCase();
+renderCards(games.filter(g=>g.name.toLowerCase().includes(q)));
+}
+
+function openGame(i){
+const g=games[i];
+document.getElementById("home").classList.add("hidden");
+const d=document.getElementById("details");
+d.classList.remove("hidden");
+d.innerHTML=`
+<button class="back" onclick="home()">← VOLTAR</button>
+<div class="emoji">${g.emoji}</div>
+<span class="tag">${g.genre}</span>
+<h1>${g.name}</h1>
+<p>${g.desc}</p>
+<div class="panel">
+<h2>📖 HISTÓRIA</h2><p>${g.story}</p>
+</div>
+<div class="panel">
+<h2>👥 PERSONAGENS</h2>
+<ul>${g.characters.map(x=>`<li>${x}</li>`).join("")}</ul>
+</div>
+<div class="panel">
+<h2>🎮 GAMEPLAY</h2>
+<ul>${g.gameplay.map(x=>`<li>${x}</li>`).join("")}</ul>
+</div>
+<div class="panel">
+<h2>🧠 CURIOSIDADES E SEGREDOS</h2>
+<ul>${g.facts.map(x=>`<li>${x}</li>`).join("")}</ul>
+</div>
+<button class="back" onclick="home()">← VOLTAR AOS JOGOS</button>`;
+window.scrollTo(0,0);
+}
+
+function home(){
+document.getElementById("details").classList.add("hidden");
+document.getElementById("home").classList.remove("hidden");
+window.scrollTo(0,0);
+}
+renderCards();
+</script>
 </body>
 </html>
