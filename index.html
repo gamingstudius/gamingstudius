@@ -5,71 +5,317 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gamingstudius - Portal Gamer</title>
+
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#080808;color:#fff;font-family:Arial,sans-serif}
-header{padding:22px 7%;background:#101010;border-bottom:2px solid #e00020;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
-.logo{font-size:24px;font-weight:bold;color:#ff1838;text-shadow:0 0 12px #ff1838}
-nav{display:flex;gap:16px;flex-wrap:wrap}
-nav a{color:white;text-decoration:none}
+
+body{
+background:#080808;
+color:#fff;
+font-family:Arial,sans-serif;
+}
+
+header{
+padding:22px 7%;
+background:#101010;
+border-bottom:2px solid #e00020;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+color:#ff1838;
+text-shadow:0 0 12px #ff1838;
+}
+
+nav{
+display:flex;
+gap:16px;
+flex-wrap:wrap;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+}
+
 nav a:hover{color:#ff1838}
-.hero{padding:75px 8%;background:radial-gradient(circle at 80% 30%,#47101b,#080808 70%)}
-.hero h1{font-size:clamp(35px,7vw,60px);margin-bottom:20px}
+
+.hero{
+padding:75px 8%;
+background:radial-gradient(circle at 80% 30%,#47101b,#080808 70%);
+}
+
+.hero h1{
+font-size:clamp(35px,7vw,60px);
+margin-bottom:20px;
+}
+
 .neon{color:#ff1838}
-.hero p{color:#bbb;line-height:1.7;max-width:650px}
+
+.hero p{
+color:#bbb;
+line-height:1.7;
+max-width:650px;
+}
+
 section{padding:42px 8%}
-h2{color:#ff1838;margin-bottom:22px}
-.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
-.filters button{background:#222;border:1px solid #444}
-.filters button.active{background:#e00020;border-color:#e00020}
-.search{width:100%;padding:15px;background:#171717;border:1px solid #393939;border-radius:9px;color:white;margin-bottom:20px;font-size:16px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card{background:#151515;border:1px solid #303030;border-radius:13px;padding:22px;transition:.25s}
-.card:hover{transform:translateY(-5px);border-color:#ff1838;box-shadow:0 0 15px #ff183835}
-.emoji{font-size:42px;margin-bottom:14px}
+
+h2{
+color:#ff1838;
+margin-bottom:22px;
+}
+
+.filters{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-bottom:20px;
+}
+
+.filters button{
+background:#222;
+border:1px solid #444;
+}
+
+.filters button.active{
+background:#e00020;
+border-color:#e00020;
+}
+
+.search{
+width:100%;
+padding:15px;
+background:#171717;
+border:1px solid #393939;
+border-radius:9px;
+color:white;
+margin-bottom:20px;
+font-size:16px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
+}
+
+.card{
+background:#151515;
+border:1px solid #303030;
+border-radius:13px;
+padding:22px;
+transition:.25s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+border-color:#ff1838;
+box-shadow:0 0 15px #ff183835;
+}
+
+.emoji{
+font-size:42px;
+margin-bottom:14px;
+}
+
 .card h3{margin-bottom:12px}
-.card p{color:#bbb;line-height:1.6;font-size:14px}
-.tag{display:block;color:#ff536b;font-size:12px;margin:15px 0}
-button{border:0;border-radius:8px;padding:12px 17px;background:#e00020;color:white;font-weight:bold;cursor:pointer;transition:.2s}
+
+.card p{
+color:#bbb;
+line-height:1.6;
+font-size:14px;
+}
+
+.tag{
+display:block;
+color:#ff536b;
+font-size:12px;
+margin:15px 0;
+}
+
+button{
+border:0;
+border-radius:8px;
+padding:12px 17px;
+background:#e00020;
+color:white;
+font-weight:bold;
+cursor:pointer;
+transition:.2s;
+}
+
 button:hover{background:#ff3855}
-.highlight{padding:30px;border-radius:16px;min-height:250px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(135deg,#260008,#a00020);border:1px solid #e00020}
-.highlight.gta{background:linear-gradient(135deg,#4b174f,#d64d83,#f39b65,#322b78);border-color:#f58bc5}
-.highlight h3{font-size:30px;margin-bottom:12px}
-.highlight p{line-height:1.6;color:#eee;margin-bottom:18px}
-.highlights{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.detail{padding:40px 8%;min-height:75vh}
-.detail h1{font-size:clamp(32px,6vw,48px);margin:18px 0}
+
+.highlight{
+padding:30px;
+border-radius:16px;
+min-height:250px;
+display:flex;
+flex-direction:column;
+justify-content:flex-end;
+background:linear-gradient(135deg,#260008,#a00020);
+border:1px solid #e00020;
+}
+
+.highlight.gta{
+background:linear-gradient(135deg,#4b174f,#d64d83,#f39b65,#322b78);
+border-color:#f58bc5;
+}
+
+.highlight h3{
+font-size:30px;
+margin-bottom:12px;
+}
+
+.highlight p{
+line-height:1.6;
+color:#eee;
+margin-bottom:18px;
+}
+
+.highlights{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+}
+
+.detail{
+padding:40px 8%;
+min-height:75vh;
+}
+
+.detail h1{
+font-size:clamp(32px,6vw,48px);
+margin:18px 0;
+}
+
 .detail h2{margin-top:20px}
-.detail p,.detail li{color:#ccc;line-height:1.8;margin-bottom:10px}
+
+.detail p,.detail li{
+color:#ccc;
+line-height:1.8;
+margin-bottom:10px;
+}
+
 .detail ul{padding-left:23px}
-.panel{background:#151515;border:1px solid #303030;border-radius:12px;padding:22px;margin:20px 0}
-.back{background:#292929;color:white;margin-bottom:20px}
+
+.panel{
+background:#151515;
+border:1px solid #303030;
+border-radius:12px;
+padding:22px;
+margin:20px 0;
+}
+
+.back{
+background:#292929;
+color:white;
+margin-bottom:20px;
+}
+
 .hidden{display:none!important}
-.spoiler{background:#230b10;border:1px solid #a00020;padding:20px;border-radius:12px;margin:20px 0}
-.spoiler-content{display:none;margin-top:15px}
-.special-gta{background:linear-gradient(135deg,#39113d,#c44783,#e58b65);padding:30px;border-radius:15px}
-.rainbow{border:1px solid transparent;border-image:linear-gradient(90deg,red,orange,yellow,green,blue,violet) 1}
-footer{text-align:center;padding:30px;color:#888;border-top:1px solid #292929}
+
+.spoiler{
+background:#230b10;
+border:1px solid #a00020;
+padding:20px;
+border-radius:12px;
+margin:20px 0;
+}
+
+.spoiler-content{
+display:none;
+margin-top:15px;
+}
+
+.special-gta{
+background:linear-gradient(135deg,#39113d,#c44783,#e58b65);
+padding:30px;
+border-radius:15px;
+}
+
+.rainbow{
+border:1px solid transparent;
+border-image:linear-gradient(90deg,red,orange,yellow,green,blue,violet) 1;
+}
+
+footer{
+text-align:center;
+padding:30px;
+color:#888;
+border-top:1px solid #292929;
+}
+
+/* ESTRELA SECRETA DO LOBBY */
+
+.lobby-secret{
+display:flex;
+justify-content:flex-end;
+padding:0 8% 20px;
+}
+
+.secret-star{
+display:inline-block;
+color:#777;
+font-size:17px;
+cursor:pointer;
+user-select:none;
+opacity:.45;
+transition:.3s;
+padding:8px;
+}
+
+.secret-star:hover{
+color:#ff1838;
+opacity:1;
+text-shadow:0 0 12px #ff1838;
+transform:rotate(25deg);
+}
+
+.secret-star.activated{
+color:#ff1838;
+opacity:1;
+text-shadow:0 0 18px #ff1838;
+animation:secretPulse .7s ease-in-out 2;
+}
+
+@keyframes secretPulse{
+50%{
+transform:scale(1.7) rotate(180deg);
+text-shadow:0 0 25px #ff1838;
+}
+}
+
 @media(max-width:600px){
 header{padding:20px 5%}
 nav{gap:12px}
 .hero{padding:60px 6%}
 section{padding:32px 6%}
+.lobby-secret{padding:0 6% 20px}
 }
 </style>
 </head>
+
 <body>
 
 <header>
 <div class="logo">GAMINGSTUDIUS</div>
+
 <nav>
 <a href="#" onclick="home();return false">Início</a>
-<a href="#jogos" onclick="home();return false">Jogos</a>
-<a href="#competitivos" onclick="home();return false">Competitivos</a>
+<a href="#jogos" onclick="goToSection('jogos');return false">Jogos</a>
+<a href="#competitivos" onclick="showCompetitive();return false">Competitivos</a>
 </nav>
 </header>
 
 <main id="home">
+
 <div class="hero">
 <h1>SEU UNIVERSO<br><span class="neon">GAMER COMEÇA AQUI.</span></h1>
 <p>Explore franquias, descubra histórias, conheça personagens e mergulhe no universo dos videogames.</p>
@@ -77,30 +323,52 @@ section{padding:32px 6%}
 
 <section>
 <h2>🔥 GRANDES DESTAQUES</h2>
+
 <div class="highlights">
+
 <div class="highlight">
 <h3>RESIDENT EVIL</h3>
 <p>Explore uma das maiores franquias de terror dos videogames.</p>
 <button onclick="openGame('resident')">EXPLORAR FRANQUIA →</button>
 </div>
+
 <div class="highlight gta">
 <h3>GRAND THEFT AUTO VI</h3>
 <p>Bem-vindo a Leonida. Conheça Jason, Lucia e Vice City.</p>
 <button onclick="openGame('gta6')">ACESSAR DESTAQUE →</button>
 </div>
+
 </div>
 </section>
 
 <section id="jogos">
 <h2>🎮 FRANQUIAS E JOGOS</h2>
+
 <input class="search" id="search" placeholder="Pesquisar franquia..." oninput="render()">
+
 <div class="filters">
 <button class="active" onclick="setFilter('todos',this)">Todos</button>
 <button onclick="setFilter('franquia',this)">Franquias</button>
 <button onclick="setFilter('competitivo',this)">Competitivos</button>
 </div>
+
 <div class="cards" id="cards"></div>
 </section>
+
+<!-- ESTRELA EXCLUSIVA DO LOBBY -->
+<div class="lobby-secret">
+<span
+class="secret-star"
+id="secretStar"
+onclick="secretClick()"
+role="button"
+tabindex="0"
+aria-label="Estrela"
+onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();secretClick();}">
+★
+</span>
+</div>
+
 </main>
 
 <section id="details" class="detail hidden"></section>
@@ -111,79 +379,137 @@ section{padding:32px 6%}
 </footer>
 
 <script>
+
 const data = [
+
 {id:"resident",name:"Resident Evil",emoji:"🧟",type:"franquia",genre:"Terror e sobrevivência",desc:"Uma das maiores franquias de terror dos videogames.",story:"A franquia acompanha diferentes personagens enfrentando ameaças biológicas, conspirações e criaturas perigosas.",characters:["Leon S. Kennedy","Claire Redfield","Chris Redfield","Jill Valentine","Ada Wong"],games:["Resident Evil (1996)","Resident Evil 2","Resident Evil 3: Nemesis","Resident Evil Code: Veronica","Resident Evil 4","Resident Evil 5","Resident Evil 6","Resident Evil 7: Biohazard","Resident Evil Village","Resident Evil Requiem","Resident Evil 0","Resident Evil Revelations","Resident Evil Revelations 2"],facts:["A franquia começou em 1996.","Raccoon City é um dos cenários mais conhecidos.","A série possui remakes, spin-offs e animações."]},
+
 {id:"gta",name:"Grand Theft Auto",emoji:"🚗",type:"franquia",genre:"Ação e mundo aberto",desc:"Uma franquia conhecida por seus mundos abertos e histórias criminosas.",story:"A série apresenta diferentes protagonistas em cidades fictícias inspiradas em locais reais.",characters:["Claude","Tommy Vercetti","Carl Johnson","Niko Bellic","Michael De Santa","Franklin Clinton","Trevor Philips"],games:["GTA","GTA 2","GTA III","Vice City","San Andreas","Liberty City Stories","Vice City Stories","GTA IV","The Lost and Damned","The Ballad of Gay Tony","Chinatown Wars","GTA V","GTA Online","GTA VI"],facts:["A franquia possui diferentes universos e continuidades.","Vice City é inspirada em Miami.","GTA San Andreas é um dos títulos mais conhecidos."]},
+
 {id:"gta6",name:"Grand Theft Auto VI",emoji:"🌴",type:"franquia",genre:"Ação e mundo aberto",desc:"Uma nova aventura em Leonida, com Jason e Lucia.",story:"GTA VI apresenta Jason e Lucia em uma aventura ambientada no estado fictício de Leonida, incluindo Vice City.",characters:["Jason","Lucia"],games:["Grand Theft Auto VI"],facts:["Vice City retorna em uma nova versão.","Leonida é o estado fictício do jogo.","Jason e Lucia são os protagonistas anunciados."],special:true},
+
 {id:"tomb",name:"Tomb Raider",emoji:"🏹",type:"franquia",genre:"Ação e aventura",desc:"Acompanhe Lara Croft em expedições e descobertas arqueológicas.",story:"Lara Croft explora tumbas, ruínas e locais perigosos em busca de artefatos e respostas.",characters:["Lara Croft","Jonah Maiava","Samantha Nishimura","Zip"],games:["Tomb Raider","Tomb Raider II","Tomb Raider III","The Last Revelation","Legend","Anniversary","Underworld","Tomb Raider (2013)","Rise of the Tomb Raider","Shadow of the Tomb Raider"],facts:["Lara Croft estreou em 1996.","A franquia possui filmes e animações.","A trilogia Survivor apresenta uma origem reimaginada para Lara."]},
+
 {id:"gow",name:"God of War",emoji:"⚔️",type:"franquia",genre:"Ação e aventura",desc:"A jornada de Kratos por diferentes mitologias.",story:"Kratos enfrentou deuses e criaturas da mitologia grega e posteriormente iniciou uma nova jornada no universo nórdico.",characters:["Kratos","Atreus","Freya","Mimir","Baldur","Zeus"],games:["God of War","God of War II","God of War III","Ascension","God of War (2018)","Ragnarök","Valhalla"],facts:["A franquia começou em 2005.","A saga possui fases grega e nórdica.","O Machado Leviatã é uma das armas mais famosas da série."]},
+
 {id:"tlou",name:"The Last of Us",emoji:"🍄",type:"franquia",genre:"Sobrevivência",desc:"Uma história sobre sobrevivência, escolhas e relações humanas.",story:"Joel e Ellie atravessam um mundo transformado por uma infecção causada pelo fungo Cordyceps.",characters:["Joel","Ellie","Tess","Tommy","Abby","Dina"],games:["The Last of Us","Left Behind","The Last of Us Part II"],facts:["O primeiro jogo foi lançado em 2013.","A franquia ganhou uma adaptação para televisão.","A narrativa é um dos pontos centrais da série."]},
+
 {id:"rdr",name:"Red Dead Redemption",emoji:"🤠",type:"franquia",genre:"Ação e aventura",desc:"Histórias de foras da lei no Velho Oeste.",story:"A série acompanha personagens que vivem durante o declínio do Velho Oeste americano.",characters:["Arthur Morgan","John Marston","Dutch van der Linde","Sadie Adler"],games:["Red Dead Revolver","Red Dead Redemption","Undead Nightmare","Red Dead Redemption 2"],facts:["RDR2 é uma prequela do primeiro jogo.","A gangue Van der Linde é central na história.","O mundo possui ecossistemas e animais variados."]},
+
 {id:"zelda",name:"The Legend of Zelda",emoji:"🗡️",type:"franquia",genre:"Aventura e fantasia",desc:"Explore Hyrule em aventuras protagonizadas por Link.",story:"A franquia apresenta diferentes aventuras ligadas a Hyrule, à princesa Zelda e ao herói Link.",characters:["Link","Zelda","Ganondorf","Impa"],games:["The Legend of Zelda","A Link to the Past","Ocarina of Time","Majora's Mask","The Wind Waker","Twilight Princess","Breath of the Wild","Tears of the Kingdom"],facts:["Ocarina of Time é um dos jogos mais influentes da série.","A cronologia oficial possui diferentes ramificações.","Link é o protagonista de muitas das aventuras."]},
+
 {id:"minecraft",name:"Minecraft",emoji:"⛏️",type:"franquia",genre:"Sandbox",desc:"Construa, explore e sobreviva em mundos de blocos.",story:"Minecraft permite criar construções, explorar dimensões e desenvolver sua própria aventura.",characters:["Steve","Alex","Villagers","Ender Dragon"],games:["Minecraft Java Edition","Minecraft Bedrock Edition","Minecraft Dungeons","Minecraft Legends"],facts:["O jogo foi criado por Markus Persson.","Existem dimensões como Nether e End.","O Creeper surgiu de um erro de modelagem."]},
+
 {id:"freefire",name:"Free Fire",emoji:"🔥",type:"franquia",genre:"Battle Royale",desc:"Entre em batalhas e lute pela sobrevivência.",story:"Jogadores disputam partidas em mapas e precisam sobreviver até o final.",characters:["Alok","Kelly","Hayato","Chrono","Moco"],games:["Free Fire","Free Fire MAX"],facts:["Foi lançado em 2017.","É desenvolvido e publicado pela Garena.","Possui personagens com habilidades especiais."]},
+
 {id:"ben10",name:"Ben 10",emoji:"⌚",type:"franquia",genre:"Ação e aventura",desc:"Acompanhe Ben Tennyson e suas transformações alienígenas.",story:"Ben encontra o Omnitrix, um dispositivo que permite assumir formas de diferentes alienígenas.",characters:["Ben Tennyson","Gwen Tennyson","Kevin Levin","Vovô Max"],games:["Ben 10: Protector of Earth","Alien Force","Ultimate Alien","Omniverse"],facts:["A franquia começou como uma série animada.","O Omnitrix é o principal dispositivo da história.","Esta seleção contempla as fases clássicas e anteriores ao reboot de 2016."]},
+
 {id:"naruto",name:"Naruto",emoji:"🍥",type:"franquia",genre:"Luta e aventura",desc:"Acompanhe ninjas em batalhas e grandes jornadas.",story:"Naruto Uzumaki busca reconhecimento e sonha em se tornar Hokage.",characters:["Naruto","Sasuke","Sakura","Kakashi","Itachi"],games:["Naruto Ultimate Ninja","Ultimate Ninja Storm","Storm 2","Storm 3","Storm 4","Connections"],facts:["A série possui diversos jogos de luta.","A franquia ganhou adaptações para cinema e televisão.","A série Storm adapta momentos importantes do anime."]},
+
 {id:"dragonball",name:"Dragon Ball",emoji:"🐉",type:"franquia",genre:"Luta e aventura",desc:"Batalhas épicas com Goku, Vegeta e outros guerreiros.",story:"A franquia acompanha Goku e seus amigos em aventuras e confrontos cada vez maiores.",characters:["Goku","Vegeta","Gohan","Piccolo","Freeza"],games:["Budokai Tenkaichi","Budokai Tenkaichi 2","Budokai Tenkaichi 3","Sparking! ZERO","Xenoverse 2","FighterZ"],facts:["A franquia possui décadas de jogos.","Sparking! ZERO continua a tradição de batalhas em arenas.","Os jogos exploram diferentes sagas do anime."]},
+
 {id:"aot",name:"Attack on Titan",emoji:"🧱",type:"franquia",genre:"Ação",desc:"Enfrente titãs em um mundo cercado por muralhas.",story:"A humanidade luta para sobreviver diante de criaturas gigantes conhecidas como Titãs.",characters:["Eren Yeager","Mikasa Ackerman","Armin Arlert","Levi"],games:["Attack on Titan","Attack on Titan 2","The Final Battle"],facts:["O equipamento de manobra tridimensional é marcante.","A história possui muitos mistérios.","Os jogos adaptam acontecimentos do anime."]},
+
 {id:"jojo",name:"JoJo's Bizarre Adventure",emoji:"⭐",type:"franquia",genre:"Luta e aventura",desc:"Uma saga de famílias, poderes e batalhas extraordinárias.",story:"A franquia acompanha diferentes gerações da família Joestar.",characters:["Jonathan Joestar","Joseph Joestar","Jotaro Kujo","Josuke Higashikata","Giorno Giovanna"],games:["All-Star Battle R","Eyes of Heaven","Heritage for the Future"],facts:["Cada parte acompanha um protagonista diferente.","Os Stands são poderes importantes da série.","A franquia possui jogos de luta e aventura."]},
+
 {id:"fnaf",name:"Five Nights at Freddy's",emoji:"🐻",type:"franquia",genre:"Terror",desc:"Descubra os mistérios por trás de uma pizzaria assustadora.",story:"A série apresenta acontecimentos misteriosos ligados a restaurantes e animatrônicos.",characters:["Freddy Fazbear","Bonnie","Chica","Foxy","William Afton"],games:["FNAF 1","FNAF 2","FNAF 3","FNAF 4","Sister Location","Pizzeria Simulator","Ultimate Custom Night","Help Wanted","Security Breach","Help Wanted 2"],facts:["A franquia começou em 2014.","A história é conhecida por seus mistérios.","A série ganhou adaptações para cinema."]},
+
 {id:"batman",name:"Batman Arkham",emoji:"🦇",type:"franquia",genre:"Ação e aventura",desc:"Entre no universo do Cavaleiro das Trevas.",story:"A série acompanha Batman enfrentando inimigos conhecidos de Gotham City.",characters:["Batman","Coringa","Harley Quinn","Charada","Mulher-Gato"],games:["Arkham Asylum","Arkham City","Arkham Origins","Arkham Knight","Arkham VR","Origins Blackgate"],facts:["Arkham Asylum foi o início da série principal.","Arkham Knight conclui a saga principal.","Gotham é um cenário central."]},
+
 {id:"alan",name:"Alan Wake",emoji:"🔦",type:"franquia",genre:"Terror psicológico",desc:"Uma história de mistério, suspense e escuridão.",story:"O escritor Alan Wake enfrenta acontecimentos sobrenaturais ligados à escrita e à realidade.",characters:["Alan Wake","Saga Anderson","Alice Wake","Mr. Scratch"],games:["Alan Wake","Alan Wake's American Nightmare","Alan Wake 2"],facts:["A franquia possui conexões com Control.","A narrativa trabalha com diferentes perspectivas.","A atmosfera de suspense é uma marca da série."]},
+
 {id:"cyberpunk",name:"Cyberpunk",emoji:"🌆",type:"franquia",genre:"RPG e ação",desc:"Explore Night City em um futuro tecnológico.",story:"Cyberpunk 2077 acompanha V em uma cidade dominada por tecnologia, corporações e conflitos.",characters:["V","Johnny Silverhand","Judy Alvarez","Panam Palmer"],games:["Cyberpunk 2077","Phantom Liberty"],facts:["Night City é o cenário principal.","Phantom Liberty é uma expansão.","O jogo é baseado no universo de RPG de mesa Cyberpunk."]},
+
 {id:"elden",name:"Elden Ring",emoji:"💍",type:"franquia",genre:"RPG de ação",desc:"Explore as Terras Intermédias e enfrente grandes desafios.",story:"O Maculado percorre as Terras Intermédias em busca do Anel Prístino.",characters:["Maculado","Melina","Ranni","Malenia"],games:["Elden Ring","Shadow of the Erdtree"],facts:["O mundo foi desenvolvido pela FromSoftware.","A expansão adiciona uma nova região.","O jogo possui diferentes finais."]},
+
 {id:"ghost",name:"Ghost",emoji:"🌸",type:"franquia",genre:"Ação e aventura",desc:"Aventure-se em histórias ambientadas no Japão.",story:"A franquia acompanha guerreiros em jornadas por cenários inspirados na história japonesa.",characters:["Jin Sakai","Yuna","Lord Shimura"],games:["Ghost of Tsushima","Ghost of Yōtei"],facts:["Tsushima apresenta uma ilha de mundo aberto.","O primeiro jogo explora a invasão mongol.","A franquia utiliza cenários inspirados no Japão."]},
+
 {id:"spiderman",name:"Marvel's Spider-Man",emoji:"🕷️",type:"franquia",genre:"Ação e aventura",desc:"Viva aventuras com os heróis aracnídeos da Marvel.",story:"Peter Parker e Miles Morales protegem Nova York de diferentes ameaças.",characters:["Peter Parker","Miles Morales","MJ","Venom","Kraven"],games:["Marvel's Spider-Man","Miles Morales","Marvel's Spider-Man 2"],facts:["A série apresenta diferentes versões do herói.","Nova York é o cenário principal.","Os jogos possuem diferentes habilidades e trajes."]},
+
 {id:"suicide",name:"Suicide Squad",emoji:"💥",type:"franquia",genre:"Ação",desc:"Uma equipe de vilões recebe uma missão perigosa.",story:"O Esquadrão Suicida é enviado em uma missão envolvendo uma ameaça à humanidade.",characters:["Harley Quinn","Deadshot","Capitão Bumerangue","Tubarão-Rei"],games:["Kill the Justice League"],facts:["O jogo apresenta personagens do universo DC.","A equipe é formada por criminosos recrutados.","A aventura se passa em Metrópolis."]},
 
-{id:"cs2",name:"Counter-Strike 2",emoji:"🎯",type:"competitivo",genre:"FPS tático",desc:"Confrontos táticos entre equipes.",story:"Duas equipes disputam objetivos em partidas competitivas.",characters:["Terroristas","Contra-Terroristas"],games:["Counter-Strike 2"],facts:["É um dos principais jogos competitivos de tiro.","Possui mapas clássicos e campeonatos internacionais." ]},
+{id:"cs2",name:"Counter-Strike 2",emoji:"🎯",type:"competitivo",genre:"FPS tático",desc:"Confrontos táticos entre equipes.",story:"Duas equipes disputam objetivos em partidas competitivas.",characters:["Terroristas","Contra-Terroristas"],games:["Counter-Strike 2"],facts:["É um dos principais jogos competitivos de tiro.","Possui mapas clássicos e campeonatos internacionais."]},
+
 {id:"valorant",name:"VALORANT",emoji:"🔫",type:"competitivo",genre:"FPS tático",desc:"Combate estratégico com agentes e habilidades.",story:"Duas equipes disputam rodadas utilizando armas e habilidades de agentes.",characters:["Jett","Phoenix","Sage","Reyna","Raze"],games:["VALORANT"],facts:["Foi desenvolvido pela Riot Games.","Cada agente possui habilidades próprias."]},
+
 {id:"lol",name:"League of Legends",emoji:"⚔️",type:"competitivo",genre:"MOBA",desc:"Duas equipes disputam o controle do mapa.",story:"Equipes de cinco jogadores trabalham juntas para destruir a base adversária.",characters:["Ahri","Yasuo","Jinx","Lux","Garen"],games:["League of Legends"],facts:["É um dos MOBAs mais conhecidos do mundo.","Possui campeonatos internacionais."]},
+
 {id:"dota",name:"Dota 2",emoji:"🛡️",type:"competitivo",genre:"MOBA",desc:"Estratégia e trabalho em equipe em batalhas 5 contra 5.",story:"Duas equipes disputam território e tentam destruir a estrutura principal adversária.",characters:["Invoker","Pudge","Axe","Phantom Assassin"],games:["Dota 2"],facts:["Possui um cenário competitivo internacional.","The International é seu grande campeonato."]},
+
 {id:"rainbow",name:"Rainbow Six Siege",emoji:"🌈",type:"competitivo",genre:"FPS tático",desc:"Operações táticas com operadores e destruição de cenários.",story:"Equipes de ataque e defesa disputam objetivos em ambientes destrutíveis.",characters:["Ash","Thermite","Mute","Sledge","Smoke"],games:["Rainbow Six Siege","Rainbow Six Siege X"],facts:["Os operadores possuem habilidades próprias.","A destruição de cenários influencia as partidas.","Possui campeonatos profissionais."],rainbow:true},
+
 {id:"overwatch",name:"Overwatch 2",emoji:"🦸",type:"competitivo",genre:"FPS de heróis",desc:"Combates em equipe com heróis e habilidades.",story:"Equipes disputam objetivos utilizando personagens com funções diferentes.",characters:["Tracer","Mercy","Reinhardt","D.Va","Genji"],games:["Overwatch 2"],facts:["Os personagens possuem funções específicas.","O jogo possui mapas e modos variados."]},
+
 {id:"rocket",name:"Rocket League",emoji:"🚗",type:"competitivo",genre:"Esporte e competição",desc:"Futebol com carros movidos a foguete.",story:"Equipes utilizam carros para marcar gols em partidas competitivas.",characters:["Carros e equipes"],games:["Rocket League"],facts:["Mistura futebol e veículos.","Possui campeonatos profissionais."]},
+
 {id:"fortnite",name:"Fortnite",emoji:"🏝️",type:"competitivo",genre:"Battle Royale",desc:"Construa, explore e dispute partidas em diferentes modos.",story:"Jogadores disputam partidas em uma ilha com diferentes experiências e modos.",characters:["Personagens e skins variados"],games:["Fortnite Battle Royale","Fortnite Zero Build","LEGO Fortnite","Rocket Racing","Festival"],facts:["O jogo possui eventos especiais.","Recebe colaborações com diferentes franquias."]},
+
 {id:"apex",name:"Apex Legends",emoji:"🚀",type:"competitivo",genre:"Battle Royale",desc:"Combates em equipe com lendas e habilidades.",story:"Esquadrões competem em arenas utilizando personagens com habilidades únicas.",characters:["Wraith","Lifeline","Bloodhound","Octane","Bangalore"],games:["Apex Legends"],facts:["Cada lenda possui habilidades próprias.","O jogo é ambientado no universo Titanfall."]},
+
 {id:"fc",name:"EA Sports FC",emoji:"⚽",type:"competitivo",genre:"Esporte",desc:"Experimente o futebol virtual com clubes e seleções.",story:"Dispute partidas, campeonatos e modos de gerenciamento de equipes.",characters:["Jogadores e clubes licenciados"],games:["EA Sports FC 24","EA Sports FC 25","EA Sports FC 26"],facts:["A franquia sucedeu a série FIFA.","Possui modos online e offline."]},
+
 {id:"warzone",name:"Call of Duty: Warzone",emoji:"💣",type:"competitivo",genre:"Battle Royale",desc:"Batalhas em larga escala no universo Call of Duty.",story:"Jogadores disputam partidas de sobrevivência em mapas de grande escala.",characters:["Operadores de Call of Duty"],games:["Warzone"],facts:["Warzone faz parte do universo Call of Duty.","O jogo recebe atualizações e novos conteúdos."]},
+
 {id:"pubg",name:"PUBG",emoji:"🪖",type:"competitivo",genre:"Battle Royale",desc:"Sobreviva em mapas de batalha e seja o último jogador.",story:"Jogadores procuram equipamentos e enfrentam adversários até restar um vencedor.",characters:["Sobreviventes"],games:["PUBG: Battlegrounds","PUBG Mobile"],facts:["Foi um dos jogos que popularizaram o gênero Battle Royale.","Possui diferentes mapas e modos."]}
+
 ];
 
 let currentFilter="todos";
 
 function setFilter(type,btn){
 currentFilter=type;
-document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
+
+document.querySelectorAll(".filters button").forEach(b=>{
+b.classList.remove("active");
+});
+
 btn.classList.add("active");
 render();
 }
 
 function render(){
+
 const q=document.getElementById("search").value.toLowerCase();
-const list=data.filter(g=>(currentFilter==="todos"||g.type===currentFilter)&&g.name.toLowerCase().includes(q));
+
+const list=data.filter(g=>
+(currentFilter==="todos"||g.type===currentFilter)&&
+g.name.toLowerCase().includes(q)
+);
+
 const box=document.getElementById("cards");
 box.innerHTML="";
+
 list.forEach(g=>{
+
 box.innerHTML+=`
 <div class="card ${g.rainbow?'rainbow':''}">
 <div class="emoji">${g.emoji}</div>
 <h3>${g.name}</h3>
 <p>${g.desc}</p>
-<span class="tag">${g.type==="competitivo"?"JOGO COMPETITIVO": "FRANQUIA"} • ${g.genre}</span>
+<span class="tag">${g.type==="competitivo"?"JOGO COMPETITIVO":"FRANQUIA"} • ${g.genre}</span>
 <button onclick="openGame('${g.id}')">VER MAIS →</button>
 </div>`;
+
 });
-if(!list.length)box.innerHTML="<p>Nenhum resultado encontrado.</p>";
+
+if(!list.length){
+box.innerHTML="<p>Nenhum resultado encontrado.</p>";
+}
+
 }
 
 function openGame(id){
+
 const g=data.find(x=>x.id===id);
 if(!g)return;
+
 document.getElementById("home").classList.add("hidden");
+
 const d=document.getElementById("details");
+
 d.classList.remove("hidden");
 d.className="detail";
+
 if(g.special)d.classList.add("special-gta");
 if(g.rainbow)d.classList.add("rainbow");
 
@@ -192,54 +518,139 @@ const characters=g.characters.map(x=>`<li>${x}</li>`).join("");
 const facts=g.facts.map(x=>`<li>${x}</li>`).join("");
 
 d.innerHTML=`
+
 <button class="back" onclick="home()">← VOLTAR AO CATÁLOGO</button>
+
 <div class="emoji">${g.emoji}</div>
+
 <span class="tag">${g.genre}</span>
+
 <h1>${g.name}</h1>
+
 <p>${g.desc}</p>
+
 ${g.special?'<h2>🌴 BEM-VINDO A LEONIDA</h2><p>Conheça o universo de GTA VI, seus protagonistas e a cidade de Vice City.</p>':''}
+
 <div class="panel">
 <h2>📖 SOBRE A HISTÓRIA</h2>
 <p>${g.story}</p>
 </div>
+
 <div class="panel">
 <h2>🎮 JOGOS DA FRANQUIA</h2>
 <ul>${gamesList}</ul>
 </div>
+
 <div class="panel">
 <h2>👥 PERSONAGENS</h2>
 <ul>${characters}</ul>
 </div>
+
 <div class="panel">
 <h2>🧠 CURIOSIDADES</h2>
 <ul>${facts}</ul>
 </div>
+
 <div class="spoiler">
 <h3>⚠️ ATENÇÃO: CONTÉM SPOILERS</h3>
 <p>Esta seção pode revelar acontecimentos importantes das histórias.</p>
+
 <button onclick="toggleSpoiler(this)">REVELAR SPOILERS</button>
+
 <div class="spoiler-content">
 <p>Esta página ainda não possui detalhes de enredo com spoilers. O conteúdo será ampliado nas próximas atualizações.</p>
 </div>
 </div>
+
 <button class="back" onclick="home()">← VOLTAR AOS JOGOS</button>
+
 `;
+
 window.scrollTo(0,0);
+
 }
 
 function toggleSpoiler(btn){
+
 const content=btn.nextElementSibling;
 const visible=content.style.display==="block";
+
 content.style.display=visible?"none":"block";
+
 btn.textContent=visible?"REVELAR SPOILERS":"ESCONDER SPOILERS";
+
 }
 
 function home(){
+
 document.getElementById("details").classList.add("hidden");
 document.getElementById("home").classList.remove("hidden");
+
 window.scrollTo(0,0);
+
 }
+
+function goToSection(id){
+home();
+
+setTimeout(()=>{
+document.getElementById(id).scrollIntoView({behavior:"smooth"});
+},50);
+}
+
+function showCompetitive(){
+
+currentFilter="competitivo";
+
+document.querySelectorAll(".filters button").forEach(b=>{
+b.classList.remove("active");
+
+if(b.textContent.trim()==="Competitivos"){
+b.classList.add("active");
+}
+});
+
+home();
+
+setTimeout(()=>{
 render();
+document.getElementById("jogos").scrollIntoView({behavior:"smooth"});
+},50);
+
+}
+
+/* EASTER EGG: TRÊS CLIQUES NA ESTRELA */
+
+let secretClicks=0;
+let secretActivated=false;
+
+function secretClick(){
+
+if(secretActivated)return;
+
+secretClicks++;
+
+if(secretClicks===3){
+
+secretActivated=true;
+
+const star=document.getElementById("secretStar");
+
+star.classList.add("activated");
+
+/* Gatilho secreto reservado para a surpresa */
+
+document.dispatchEvent(
+new CustomEvent("gamingstudius:easteregg")
+);
+
+}
+
+}
+
+render();
+
 </script>
+
 </body>
 </html>
